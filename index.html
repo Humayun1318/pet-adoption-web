@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,15 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- style -->
-   <link rel="stylesheet" href="styles/style.css">
-   <!-- Font awesome -->
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- Font awesome -->
   <script src="https://kit.fontawesome.com/0c05f102e0.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <header class="py-2">
-    <nav class="w-11/12 mx-auto border flex justify-between items-center">
+  <header class="py-2 w-11/12 mx-auto">
+    <!-- navbar -->
+    <nav class=" border flex justify-between items-center">
       <div class="flex gap-2 font-black text-2xl sm:text-3xl">
         <img src="images/logo.webp" alt="">
         <h2>Peddy</h2>
@@ -27,19 +30,36 @@
           <i class="fa-regular fa-user px-3 py-3 rounded-full border border-solid cursor-pointer sm:hidden"></i>
         </ul>
       </div>
-      <div class="" >
-        <i class="fa-regular fa-user px-3 py-3 rounded-full border border-solid cursor-pointer hidden sm:block"
-        ></i>
+      <div class="">
+        <i class="fa-regular fa-user px-3 py-3 rounded-full border border-solid cursor-pointer hidden sm:block"></i>
         <i class="fa-solid fa-bars px-3 py-3 rounded-full border border-solid cursor-pointer sm:hidden ml-1"
-        id="menu-bar" onclick="forMenuBar()">
+          id="menu-bar" onclick="forMenuBar()">
         </i>
         <i class="fa-solid fa-xmark px-3 py-3 rounded-full border border-solid cursor-pointer
           hidden" onclick="forCrossBar()" id="cross-bar"></i>
       </div>
     </nav>
+    <!-- Banner section -->
+    <section class="text-center w-4/5 sm:w-8/12 md:w-6/12 mx-auto my-14 space-y-3 sm:space-y-6">
+      <p class="text-base sm:text-2xl font-bold text-[#13131399]">Bringing Families Together ❤️‍🔥</p>
+      <h1 class="text-3xl sm:text-7xl font-black text-black">Your Path to Adoption Starts Here</h1>
+      <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+        at its
+        layout. The point of using Lorem Ipsum is that it has a.</p>
+      <div>
+        <a class="py-2 sm:py-4 px-4  sm:px-8 bg-[#0E7A81] rounded-xl text-white" href="#target-section">View More</a>
+      </div>
+    </section>
   </header>
+  <main>
+    
+  </main>
+  <footer id="">
+    <h3>This is footer</h3>
+  </footer>
 
 
   <script src="js/utilities.js"></script>
 </body>
+
 </html>
