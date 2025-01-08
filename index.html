@@ -58,7 +58,8 @@
     <section class="w-11/12 mx-auto" id="target-section">
       <div class="text-center w-4/5 sm:w-8/12 md:w-6/12 mx-auto">
         <h3 class="text-xl sm:text-5xl font-black mb-3 sm:mb-6">Adopt Your Best Friend</h3>
-        <p class="mb-6 sm:mb-12 text-[#131313B2]">It is a long established fact that a reader will be distracted by the readable
+        <p class="mb-6 sm:mb-12 text-[#131313B2]">It is a long established fact that a reader will be distracted by the
+          readable
           content of a page when looking at its
           layout. The point of using Lorem Ipsum is that it has a.</p>
       </div>
@@ -83,14 +84,14 @@
     </section>
 
     <!-- Best deal for you -->
-     <section class="flex justify-between items-center w-11/12 mx-auto mb-8">
+    <section class="flex justify-between items-center w-11/12 mx-auto mb-8">
       <h3 class="text-lg sm:text-2xl font-black text-[#131313]">Best Deal For You</h3>
       <button class="py-2 sm:py-4 px-4  sm:px-8 bg-[#0E7A81] rounded-xl text-white">Sort by Price</button>
-     </section>
-     <!-- details section  -->
-      <section class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:col-span-3" id="cards">
-          <!-- <div class="p-5 border border-solid rounded-xl border-[#13131319]">
+    </section>
+    <!-- details section  -->
+    <section class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:col-span-3" id="cards">
+        <!-- <div class="p-5 border border-solid rounded-xl border-[#13131319]">
             <img src="images/pet.webp" alt="" class="mb-6">
             <div class="space-y-1">
               <h6 class="text-xl font-bold text-[#131313]">Mister Tartosh</h6>
@@ -111,13 +112,35 @@
               <button class="rounded-lg border border-solid border-[#0E7A8126] text-[#0E7A81] font-bold text-base sm:text-xl py-2 px-2 sm:px-4 text-center">Details</button>
             </div> -->
 
-          <!-- </div> -->
-          
-        </div>
-        <div class="h-[500px] w-full p-5 border border-solid rounded-xl border-[#13131319]">
+        <!-- </div> -->
 
+      </div>
+      <!-- for like button add the image -->
+      <div class="h-[500px] w-full p-5 border border-solid rounded-xl border-[#13131319]">
+      </div>
+    </section>
+
+    <!-- details modal for specific -->
+    <section id="showingModal">
+      <!-- Open the modal using ID.showModal() method -->
+      <!-- <button class="btn hidden" onclick="customModal.showModal()" id="modalBtn">open modal</button> -->
+      <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="modalContent">
+
+          </div>
+          <div class="modal-action">
+            <form method="dialog" class="w-full ">
+              <!-- if there is a button in form, it will close the modal -->
+              <button
+                class="btn border border-solid border-[#0E7A8133] bg-[#0E7A811A]  w-full text-lg font-bold text-[#0E7A81]">Cancel</button>
+            </form>
+          </div>
         </div>
-      </section>
+      </dialog>
+    </section>
+
+
   </main>
 
 
