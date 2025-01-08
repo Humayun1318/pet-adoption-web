@@ -39,13 +39,18 @@ const forActiveCategoryBtnRemove = () => {
     btn.classList.remove('custom-active-btn');
   }
 }
+
+//for like button and add image that specific pets
+const forAddingThumbnail = (img) => {
+  const addThumbnail = document.getElementById('thumbnail');
+  addThumbnail.innerHTML += `
+    <img src=${img} alt="" class="rounded-xl w-full h-full object-contain">
+  `;
+}
 //for display all pets
 const displayAllPets = (pets) => {
-  
   const cards = document.getElementById('cards');
   cards.innerHTML = '';
-
-  console.log(pets);
   if (pets.length === 0) {
     cards.classList.remove('grid')
     cards.innerHTML = `
@@ -79,7 +84,7 @@ const displayAllPets = (pets) => {
             </div>
             <div class="my-4"><hr></div>
             <div class="flex justify-between">
-              <button class="py-2 px-2 sm:px-4 rounded-lg border border-solid border-[#0E7A8126]"><i class="fa-regular fa-thumbs-up"></i></button>
+              <button class="py-2 px-2 sm:px-4 rounded-lg border border-solid border-[#0E7A8126]" onclick="forAddingThumbnail('${pet.image}')"><i class="fa-regular fa-thumbs-up"></i></button>
               <button class="btn rounded-lg border border-solid border-[#0E7A8126] py-2 px-2 sm:px-4 text-[#0E7A81] font-bold text-base sm:text-xl text-center">Adopt</button>
               <button class="btn rounded-lg border border-solid border-[#0E7A8126] text-[#0E7A81] font-bold text-base sm:text-xl py-2 px-2 sm:px-4 text-center" onclick="FetchPetDetailsByID('${pet.petId}')">Details</button>
             </div>
