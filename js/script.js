@@ -4,7 +4,8 @@ const fetchAllPets = async () => {
   const url = 'https://openapi.programming-hero.com/api/peddy/pets';
   const res = await fetch(url);
   const data = await res.json();
-  displayAllPets(data)
+  console.log(data.pets);
+  displayAllPets(data.pets)
 }
 // fetching single specific pet details 
 const FetchPetDetailsByID = async (petId) => {
@@ -14,14 +15,41 @@ const FetchPetDetailsByID = async (petId) => {
   showingSinglePetDetails(data.petData);
 }
 
-//for display all pets
-const displayAllPets = ({ pets }) => {
-  const cards = document.getElementById('cards');
+//fetching all Pet Categories
+const fetchingAllPetCategories = async () => {
+  const url = 'https://openapi.programming-hero.com/api/peddy/categories';
+  const res = await fetch(url);
+  const data = await res.json();
+  showingAllPetCategories(data.categories);
+}
+//Fetch Pets by Category
+const FetchPetsByCategory = async (category) => {
+  const url = `https://openapi.programming-hero.com/api/peddy/category/${category}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  forActiveCategoryBtnRemove();
+  const forActiveBtn = document.getElementById(`forActive-${category}`)
+  forActiveBtn.classList.add('custom-active-btn')
+  displayAllPets(data.data);
+}
 
+//for active category button remove
+const forActiveCategoryBtnRemove = () => {
+  const activeButton = document.getElementsByClassName('forRemoveActive');
+  console.log(activeButton);
+  for (let btn of activeButton) {
+    btn.classList.remove('custom-active-btn');
+  }
+}
+//for display all pets
+const displayAllPets = (pets) => {
+  
+  const cards = document.getElementById('cards');
+  cards.innerHTML = '';
+  
   pets.forEach(pet => {
-    // console.log(pet);
     const card = document.createElement('div');
-    card.classList.add('p-5', 'border', 'border-solid', 'rounded-xl', 'border-[#13131319]')
+    card.classList.add('p-2','sm:p-5', 'border', 'border-solid', 'rounded-xl', 'border-[#13131319]')
     card.innerHTML = `
       <img src="${pet.image}" alt="" class="mb-6 rounded-xl w-full object-contain">
             <div class="space-y-1">
@@ -50,7 +78,6 @@ const displayAllPets = ({ pets }) => {
 
 //for the display a single specific pet details
 function showingSinglePetDetails(petData) {
-  console.log(petData);
   const modalContent = document.getElementById('modalContent');
 
   modalContent.innerHTML = `
@@ -94,4 +121,24 @@ function showingSinglePetDetails(petData) {
   document.getElementById('customModal').showModal();
 }
 
+//for displaying all pet categories 
+const showingAllPetCategories = (categories) => {
+  const categoriesContainer = document.getElementById('categories');
+
+  categories.forEach((item) => {
+    // console.log(item);
+    const category = document.createElement('div');
+    category.classList = 'p-6 rounded-2xl border border-solid border-[#0E7A8126] ';
+    category.innerHTML = `
+      <button onclick="FetchPetsByCategory('${item?.category}')" class="flex justify-center items-center gap-2 w-full forRemoveActive" id="forActive-${item?.category}">
+      <img src=${item?.category_icon} alt="">
+      <p class="font-bold text-lg sm:text-2xl text-[#131313] ">${item?.category}</p>
+      </button>
+    `;
+
+    categoriesContainer.append(category);
+  })
+}
+
 fetchAllPets();
+fetchingAllPetCategories();
