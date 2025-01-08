@@ -4,7 +4,6 @@ const fetchAllPets = async () => {
   const url = 'https://openapi.programming-hero.com/api/peddy/pets';
   const res = await fetch(url);
   const data = await res.json();
-  console.log(data.pets);
   displayAllPets(data.pets)
 }
 // fetching single specific pet details 
@@ -36,7 +35,6 @@ const FetchPetsByCategory = async (category) => {
 //for active category button remove
 const forActiveCategoryBtnRemove = () => {
   const activeButton = document.getElementsByClassName('forRemoveActive');
-  console.log(activeButton);
   for (let btn of activeButton) {
     btn.classList.remove('custom-active-btn');
   }
@@ -46,6 +44,21 @@ const displayAllPets = (pets) => {
   
   const cards = document.getElementById('cards');
   cards.innerHTML = '';
+
+  console.log(pets);
+  if (pets.length === 0) {
+    cards.classList.remove('grid')
+    cards.innerHTML = `
+      <div class="flex flex-col justify-center items-center space-y-6 py-14 sm:py-28 rounded-3xl bg-[#13131305] text-center">
+      <img src="images/error.webp" alt="">
+      <h4 class="text-base sm:text-3xl font-bold text-[#131313]">No Information Available</h4>
+      <p class="text-[#131313B3] w-10/12">It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+      its layout. The point of using Lorem Ipsum is that it has a.</p>
+    </div>
+    `;
+  } else {
+    cards.classList.add('grid')
+  }
   
   pets.forEach(pet => {
     const card = document.createElement('div');
@@ -126,7 +139,6 @@ const showingAllPetCategories = (categories) => {
   const categoriesContainer = document.getElementById('categories');
 
   categories.forEach((item) => {
-    // console.log(item);
     const category = document.createElement('div');
     category.classList = 'p-6 rounded-2xl border border-solid border-[#0E7A8126] ';
     category.innerHTML = `
