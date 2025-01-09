@@ -1,35 +1,61 @@
 
 // fetching all 
 const fetchAllPets = async () => {
-  const url = 'https://openapi.programming-hero.com/api/peddy/pets';
-  const res = await fetch(url);
-  const data = await res.json();
-  displayAllPets(data.pets)
+  try {
+    showLoader();
+    const url = 'https://openapi.programming-hero.com/api/peddy/pets';
+    const res = await fetch(url);
+    const data = await res.json();
+    await delay(5000);
+    displayAllPets(data.pets)
+  } catch (error){
+    console.log(error);
+  } finally {
+    hideLoader();
+  }
 }
 // fetching single specific pet details 
 const FetchPetDetailsByID = async (petId) => {
-  const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  showingSinglePetDetails(data.petData);
+  try {
+    const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    showingSinglePetDetails(data.petData);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 //fetching all Pet Categories
 const fetchingAllPetCategories = async () => {
-  const url = 'https://openapi.programming-hero.com/api/peddy/categories';
-  const res = await fetch(url);
-  const data = await res.json();
-  showingAllPetCategories(data.categories);
+  try {
+    const url = 'https://openapi.programming-hero.com/api/peddy/categories';
+    const res = await fetch(url);
+    const data = await res.json();
+    showingAllPetCategories(data.categories);
+  } catch (error) {
+    console.log(error);
+  } 
+  
 }
 //Fetch Pets by Category
 const FetchPetsByCategory = async (category) => {
-  const url = `https://openapi.programming-hero.com/api/peddy/category/${category}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  forActiveCategoryBtnRemove();
-  const forActiveBtn = document.getElementById(`forActive-${category}`)
-  forActiveBtn.classList.add('custom-active-btn')
-  displayAllPets(data.data);
+  
+  try {
+    showLoader();
+    const url = `https://openapi.programming-hero.com/api/peddy/category/${category}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    forActiveCategoryBtnRemove();
+    const forActiveBtn = document.getElementById(`forActive-${category}`)
+    forActiveBtn.classList.add('custom-active-btn')
+    await delay(2000);
+    displayAllPets(data.data);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    hideLoader();
+  }
 }
 
 //for active category button remove
@@ -51,6 +77,7 @@ const forAddingThumbnail = (img) => {
 const displayAllPets = (pets) => {
   const cards = document.getElementById('cards');
   cards.innerHTML = '';
+ 
   if (pets.length === 0) {
     cards.classList.remove('grid')
     cards.innerHTML = `
@@ -69,6 +96,7 @@ const displayAllPets = (pets) => {
     const card = document.createElement('div');
     card.classList.add('p-2','sm:p-5', 'border', 'border-solid', 'rounded-xl', 'border-[#13131319]')
     card.innerHTML = `
+      
       <img src="${pet.image}" alt="" class="mb-6 rounded-xl w-full object-contain">
             <div class="space-y-1">
               <h6 class="text-xl font-bold text-[#131313]">${pet.pet_name}</h6>
@@ -156,6 +184,7 @@ const showingAllPetCategories = (categories) => {
     categoriesContainer.append(category);
   })
 }
+
 
 fetchAllPets();
 fetchingAllPetCategories();

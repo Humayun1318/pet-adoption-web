@@ -18,3 +18,17 @@ function forCrossBar() {
   menuBar.classList.remove('hidden')
   crossBar.classList.add('hidden')
 }
+
+function showLoader() {
+  const spinnerContainer = document.getElementById('forSpinner');
+  spinnerContainer.classList.remove('hidden');
+}
+
+function hideLoader() {
+  const spinnerContainer = document.getElementById('forSpinner');
+  spinnerContainer.classList.add('hidden');
+}
+
+function delay(ms) {
+  return new Promise(resolve =>{setTimeout(resolve, ms)})
+}
