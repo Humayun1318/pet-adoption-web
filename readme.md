@@ -65,6 +65,4 @@ Clone the repository from GitHub to run the project locally:
 
 ---
 
-Feel free to modify this template based on your project’s specific details and goals. This structure ensures that your `README.md` file is well-organized, professional, and easy to follow.
-
 Thank you for visiting the Pet Adoption Website! I hope you find the perfect pet to adopt.
