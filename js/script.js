@@ -6,7 +6,7 @@ const fetchAllPets = async () => {
     const url = 'https://openapi.programming-hero.com/api/peddy/pets';
     const res = await fetch(url);
     const data = await res.json();
-    await delay(5000);
+    await delay(2000);
     displayAllPets(data.pets)
   } catch (error){
     console.log(error);
@@ -14,6 +14,7 @@ const fetchAllPets = async () => {
     hideLoader();
   }
 }
+
 // fetching single specific pet details 
 const FetchPetDetailsByID = async (petId) => {
   try {
@@ -69,12 +70,36 @@ const forActiveCategoryBtnRemove = () => {
 //for like button and add image that specific pets
 const forAddingThumbnail = (img) => {
   const addThumbnail = document.getElementById('thumbnail');
-  addThumbnail.innerHTML += `
-    <img src=${img} alt="" class="rounded-xl w-full h-full object-contain">
+  const thumbnailDiv = document.createElement('div');
+  thumbnailDiv.innerHTML = `
+    <img src=${img} alt="" class="rounded-xl  w-full object-contain">
   `;
+  addThumbnail.append(thumbnailDiv);
+}
+
+//for adopt modal
+const adopting = (petId) => {
+  const countNumber = document.getElementById('count-number');
+  countNumber.innerText = '';
+  let count = 3;
+  document.getElementById('adoptingModal').showModal();
+  const countId = setInterval(() => {
+    countNumber.innerText = count;
+    count--;
+    if (count === 0) {
+      clearInterval(countId);
+      document.getElementById('closeBtn').click()
+    }
+  }, 1000)
+  const disable = document.getElementById(`adoptDisable-${petId}`);
+  disable.disabled = true;
 }
 //for display all pets
 const displayAllPets = (pets) => {
+  document.getElementById('shorting-price').addEventListener('click', function () {
+    pets.sort((a, b,) => b.price - a.price);
+    displayAllPets(pets);
+  })
   const cards = document.getElementById('cards');
   cards.innerHTML = '';
  
@@ -113,7 +138,7 @@ const displayAllPets = (pets) => {
             <div class="my-4"><hr></div>
             <div class="flex justify-between">
               <button class="py-2 px-2 sm:px-4 rounded-lg border border-solid border-[#0E7A8126]" onclick="forAddingThumbnail('${pet.image}')"><i class="fa-regular fa-thumbs-up"></i></button>
-              <button class="btn rounded-lg border border-solid border-[#0E7A8126] py-2 px-2 sm:px-4 text-[#0E7A81] font-bold text-base sm:text-xl text-center">Adopt</button>
+              <button class="btn rounded-lg border border-solid border-[#0E7A8126] py-2 px-2 sm:px-4 text-[#0E7A81] font-bold text-base sm:text-xl text-center disabled:opacity-50 disabled:cursor-not-allowed " onclick="adopting('${pet.petId}')" id="adoptDisable-${pet.petId}">Adopt</button>
               <button class="btn rounded-lg border border-solid border-[#0E7A8126] text-[#0E7A81] font-bold text-base sm:text-xl py-2 px-2 sm:px-4 text-center" onclick="FetchPetDetailsByID('${pet.petId}')">Details</button>
             </div>
     `;

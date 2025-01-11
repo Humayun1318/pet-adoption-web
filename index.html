@@ -93,14 +93,14 @@
     <!-- Best deal for you -->
     <section class="flex justify-between items-center w-11/12 mx-auto mb-8">
       <h3 class="text-lg sm:text-2xl font-black text-[#131313]">Best Deal For You</h3>
-      <button class="py-2 sm:py-4 px-4  sm:px-8 bg-[#0E7A81] rounded-xl text-white">Sort by Price</button>
+      <button class="py-2 sm:py-4 px-4  sm:px-8 bg-[#0E7A81] rounded-xl text-white hover:bg-[#0e7981b6]" id="shorting-price">Sort by Price</button>
     </section>
     <!-- for spinner -->
-    <div class="scale-[3] absolute left-[700px] top-[1400px]" id="forSpinner">
-      <span class="loading loading-spinner loading-lg"></span>
+    <div class="w-2/12 mx-auto" id="forSpinner">
+      <span class="loading loading-spinner scale-[4]"></span>
     </div>
     <!-- details section  -->
-    <section class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 mb-8" >
+    <section class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 items-start" >
 
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 md:col-span-3 " id="cards">
         
@@ -131,7 +131,7 @@
       
       <!-- for like button add the image -->
       <div
-        class="h-[124px] w-full p-5 border border-solid rounded-xl border-[#13131319] grid grid-cols-1 sm:grid-cols-2 gap-4"
+        class=" p-5 border border-solid rounded-xl border-[#13131319] grid grid-cols-1 sm:grid-cols-2  gap-4"
         id="thumbnail">
 
       </div>
@@ -155,12 +155,26 @@
       </dialog>
     </section>
 
-    <!-- <div class="mx-auto scale-[3] text-center">
-      <span class="loading loading-spinner loading-xs"></span>
-      <span class="loading loading-spinner loading-sm"></span>
-      <span class="loading loading-spinner loading-md"></span>
-      <span class="loading loading-spinner loading-lg"></span>
-    </div> -->
+    <!-- adopting modal -->
+     <section>
+      <dialog id="adoptingModal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div class="flex justify-center items-center flex-col" id="congrates-content">
+            <i class="fa-solid fa-handshake text-4xl sm:text-8xl mb-4 text-yellow-500"></i>
+            <h5 class="text-4xl  font-black mb-4">Congrates!!❤️‍🔥</h5>
+            <p class="mb-4 text-base sm:text-xl">Adoption Process is Start For Your Pet</p>
+            <p class="text-4xl sm:text-6xl font-black" id="count-number"></p>
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn hidden" id="closeBtn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+     </section>
+
   </main>
 
 
@@ -178,7 +192,7 @@
           <p>Openings hours: 9.00 AM - 5.00 PM</p>
         </div>
         <div class="grid grid-flow-col gap-4">
-          <a>
+          <a class="cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M16 0C24.8365 0 32 7.16346 32 16C32 24.8365 24.8365 32 16 32C7.16346 32 0 24.8365 0 16C0 7.16346 7.16346 0 16 0Z"
@@ -195,7 +209,7 @@
               </defs>
             </svg>
           </a>
-          <a>
+          <a class="cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" width="31" height="28" viewBox="0 0 31 28" fill="none">
               <g clip-path="url(#clip0_12_871)">
                 <path
@@ -209,7 +223,7 @@
               </defs>
             </svg>
           </a>
-          <a>
+          <a class="cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" width="47" height="32" viewBox="0 0 47 32" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M45.737 4.9964C45.2134 3.03268 43.6642 1.48374 41.6934 0.952823C38.1298 0 23.8316 0 23.8316 0C23.8316 0 9.54078 0 5.96985 0.952823C4.00632 1.47641 2.45718 3.02554 1.92627 4.9964C0.97345 8.56 0.97345 15.9999 0.97345 15.9999C0.97345 15.9999 0.97345 23.44 1.92627 27.0036C2.44986 28.9673 3.99899 30.5163 5.96985 31.0472C9.54078 32 23.8316 32 23.8316 32C23.8316 32 38.1298 32 41.6934 31.0472C43.6571 30.5236 45.206 28.9745 45.737 27.0036C46.6898 23.44 46.6898 16.0001 46.6898 16.0001C46.6898 16.0001 46.6898 8.56 45.737 4.9964Z"
@@ -218,7 +232,7 @@
                 d="M19.2645 22.8582L31.1407 15.9999L19.2645 9.14185V22.8582Z" fill="white" />
             </svg>
           </a>
-          <a>
+          <a class="cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
               <g clip-path="url(#clip0_12_889)">
                 <path
