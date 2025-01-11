@@ -1,5 +1,3 @@
-
-
 //Menubar click function
 const menuBar = document.getElementById('menu-bar')
 const menuList = document.getElementById('menu-list');
