@@ -55,8 +55,10 @@
         at its
         layout. The point of using Lorem Ipsum is that it has a.</p>
       <div>
-        <a class="py-2 sm:py-4 px-4  sm:px-8 bg-[#0E7A81] hover:bg-[#0e7981cb] rounded-xl text-white "
-          href="#target-section">View More</a>
+        <button class="hover:shadow-md hover:scale-105 transition duration-300 ease-in-out transform">
+          <a class="py-2 sm:py-4 px-4  sm:px-8 bg-[#0E7A81] hover:bg-[#0e7981cb] rounded-xl text-white "
+            href="#target-section">View More</a>
+        </button>
       </div>
       <div>
         <img src="images/pet.webp" alt="">
@@ -80,7 +82,7 @@
     <!-- Best deal for you -->
     <section class="flex justify-between items-center w-11/12 mx-auto mb-8">
       <h3 class="text-lg sm:text-2xl font-black text-[#131313]">Best Deal For You</h3>
-      <button class="py-2 sm:py-4 px-4  sm:px-8 bg-[#0E7A81] rounded-xl text-white hover:bg-[#0e7981b6]" id="shorting-price">Sort by Price</button>
+      <button class="py-2 sm:py-4 px-4  sm:px-8 bg-[#0E7A81] rounded-xl text-white hover:bg-[#0e7981b6]  hover:shadow-md hover:scale-105 transition duration-300 ease-in-out transform" id="shorting-price">Sort by Price</button>
     </section>
     <!-- for spinner -->
     <div class="w-2/12 mx-auto" id="forSpinner">
@@ -154,7 +156,7 @@
           <p>Email: humayunkabir6267@gmail.com</p>
           <p>Openings hours: 9.00 AM - 5.00 PM</p>
         </div>
-        <div class="grid grid-flow-col gap-4">
+        <div class="grid grid-flow-col gap-2 sm:gap-4">
           <a class="cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -234,9 +236,11 @@
       </nav>
       <nav>
         <h6 class="text-[#FFFFFFE6] mb-8">Drop a Message</h6>
-        <input type="email" name="" id="" class="py-4 px-5 rounded-xl bg-[#FFFFFF0D] text-white"
+        <input type="email" name="" id="" class="py-4 pl-5 rounded-xl bg-[#FFFFFF0D] text-white"
           placeholder="Enter your email">
-        <button class="py-4 px-8 bg-[#0E7A81] text-xl font-bold text-white rounded-xl w-full">Subscribe</button>
+        <button class="py-4 px-8 bg-[#0E7A81] text-xl font-bold text-white rounded-xl w-full
+        hover:bg-[#0e7981b6] hover:shadow-lg transition duration-300 ease-in-out focus:ring-4 focus:ring-[#0E7A81]/50"
+        >Subscribe</button>
       </nav>
     </section>
   </footer>

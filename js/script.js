@@ -8,7 +8,7 @@ const fetchAllPets = async () => {
     const data = await res.json();
     await delay(2000);
     displayAllPets(data.pets)
-  } catch (error){
+  } catch (error) {
     console.log(error);
   } finally {
     hideLoader();
@@ -36,12 +36,12 @@ const fetchingAllPetCategories = async () => {
     showingAllPetCategories(data.categories);
   } catch (error) {
     console.log(error);
-  } 
-  
+  }
+
 }
 //Fetch Pets by Category
 const FetchPetsByCategory = async (category) => {
-  
+
   try {
     showLoader();
     const url = `https://openapi.programming-hero.com/api/peddy/category/${category}`;
@@ -103,7 +103,7 @@ const displayAllPets = (pets) => {
   })
   const cards = document.getElementById('cards');
   cards.innerHTML = '';
- 
+
   if (pets.length === 0) {
     cards.classList.remove('grid')
     cards.innerHTML = `
@@ -117,10 +117,10 @@ const displayAllPets = (pets) => {
   } else {
     cards.classList.add('grid')
   }
-  
+
   pets.forEach(pet => {
     const card = document.createElement('div');
-    card.classList.add('p-2','sm:p-5', 'border', 'border-solid', 'rounded-xl', 'border-[#13131319]')
+    card.classList.add('p-2', 'sm:p-5', 'border', 'border-solid', 'rounded-xl', 'border-[#13131319]')
     card.innerHTML = `
       
       <img src="${pet.image}" alt="" class="mb-6 rounded-xl w-full object-contain">
@@ -138,9 +138,9 @@ const displayAllPets = (pets) => {
             </div>
             <div class="my-4"><hr></div>
             <div class="flex justify-between">
-              <button class="py-2 px-2 sm:px-4 rounded-lg border border-solid border-[#0E7A8126]" onclick="forAddingThumbnail('${pet.image}')"><i class="fa-regular fa-thumbs-up"></i></button>
-              <button class="btn rounded-lg border border-solid border-[#0E7A8126] py-2 px-2 sm:px-4 text-[#0E7A81] font-bold text-base sm:text-xl text-center disabled:opacity-50 disabled:cursor-not-allowed " onclick="adopting('${pet.petId}')" id="adoptDisable-${pet.petId}">Adopt</button>
-              <button class="btn rounded-lg border border-solid border-[#0E7A8126] text-[#0E7A81] font-bold text-base sm:text-xl py-2 px-2 sm:px-4 text-center" onclick="FetchPetDetailsByID('${pet.petId}')">Details</button>
+              <button class="py-2 px-2 sm:px-4 rounded-lg border border-solid border-[#0E7A8126] hover:border-[#0E7A81] hover:bg-[#0E7A8126] hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105" onclick="forAddingThumbnail('${pet.image}')"><i class="fa-regular fa-thumbs-up"></i></button>
+              <button class="rounded-lg border border-solid border-[#0E7A8126] py-2 px-2 sm:px-4 text-[#0E7A81] font-bold text-base sm:text-xl text-center disabled:opacity-50 disabled:cursor-not-allowed hover:border-[#0E7A81] hover:bg-[#0E7A8126] hover:text-[#0e7981ba] hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105" onclick="adopting('${pet.petId}')" id="adoptDisable-${pet.petId}">Adopt</button>
+              <button class="rounded-lg border border-solid border-[#0E7A8126] text-[#0E7A81] font-bold text-base sm:text-xl py-2 px-2 sm:px-4 text-center hover:border-[#0E7A81] hover:bg-[#0E7A8126] hover:text-[#0e7981b6] hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105" onclick="FetchPetDetailsByID('${pet.petId}')">Details</button>
             </div>
     `;
 
@@ -199,9 +199,11 @@ const showingAllPetCategories = (categories) => {
 
   categories.forEach((item) => {
     const category = document.createElement('div');
-    category.classList = 'p-6 rounded-2xl border border-solid border-[#0E7A8126] ';
+    category.classList = 'p-6 rounded-2xl border border-solid border-[#0E7A8126] hover:shadow-lg hover:border-[#0E7A81] transition duration-300 ease-in-out';
     category.innerHTML = `
-      <button onclick="FetchPetsByCategory('${item?.category}')" class="flex justify-center items-center gap-2 w-full forRemoveActive" id="forActive-${item?.category}">
+      <button onclick="FetchPetsByCategory('${item?.category}')" 
+             class="flex justify-center items-center gap-2 w-full forRemoveActive"
+             id="forActive-${item?.category}">
       <img src=${item?.category_icon} alt="">
       <p class="font-bold text-lg sm:text-2xl text-[#131313] ">${item?.category}</p>
       </button>
