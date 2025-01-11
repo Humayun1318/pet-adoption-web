@@ -94,7 +94,8 @@ const adopting = (petId) => {
   const disable = document.getElementById(`adoptDisable-${petId}`);
   disable.disabled = true;
 }
-//for display all pets
+
+//for display all pets.................
 const displayAllPets = (pets) => {
   document.getElementById('shorting-price').addEventListener('click', function () {
     pets.sort((a, b,) => b.price - a.price);
@@ -209,7 +210,6 @@ const showingAllPetCategories = (categories) => {
     categoriesContainer.append(category);
   })
 }
-
 
 fetchAllPets();
 fetchingAllPetCategories();

@@ -30,3 +30,8 @@ function hideLoader() {
 function delay(ms) {
   return new Promise(resolve =>{setTimeout(resolve, ms)})
 }
+
+// Reload page function
+function reloadPage() {
+  location.reload(); 
+}
