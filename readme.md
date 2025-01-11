@@ -57,12 +57,11 @@ Clone the repository from GitHub to run the project locally:
 - **Backend Integration**: Introduce a backend to handle pet data securely and allow user registrations.
 
 ## Acknowledgments
-- **Font Awesome**: For providing free icons used in the website’s UI.
-- **Tailwind CSS**: For the utility-first CSS framework that made styling fast and efficient.
-- **OpenAPI**: For providing the data API for pets and categories.
 
-## License
-This project is open-source and available under the [MIT License](LICENSE).
+- **Thanks to the**: Programming Hero API for providing the pet data API. 
+- **Tailwind CSS**: For the utility-first CSS framework that made styling fast and efficient.
+- **Thanks to**: [Font Awesome](https://fontawesome.com/icons/) for the free icons used in the project.
+
 
 ---
 
