@@ -23,7 +23,7 @@ The Pet Adoption Website is a functional web application designed to help users 
 
 ## Live Link
 You can check out the live version of the Pet Adoption Website here:  
-[Live Project Link](https://humayun1318.github.io/B10A6-reset9/)
+[Live Project Link](https://humayun1318.github.io/pet-adoption-web/)
 
 ## Repository Link
 Clone the repository from GitHub to run the project locally:  
