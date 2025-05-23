@@ -46,7 +46,7 @@ Clone the repository from GitHub to run the project locally:
 
 2. Navigate to the project directory:
     ```bash
-    cd B10A6-reset9
+    cd pet-adoption-web
     ```
 
 3. Open the `index.html` file in your browser to view the project.
