@@ -27,7 +27,7 @@ You can check out the live version of the Pet Adoption Website here:
 
 ## Repository Link
 Clone the repository from GitHub to run the project locally:  
-[GitHub Repository Link](https://github.com/Humayun1318/B10A6-reset9.git)
+[GitHub Repository Link](https://github.com/Humayun1318/pet-adoption-web.git)
 
 ## Technologies Used
 - **HTML5**: For structuring the website content.
@@ -41,7 +41,7 @@ Clone the repository from GitHub to run the project locally:
 
 1. Clone the repository to your local machine:
     ```bash
-    git clone https://github.com/Humayun1318/B10A6-reset9.git
+    git clone https://github.com/Humayun1318/pet-adoption-web.git
     ```
 
 2. Navigate to the project directory:
@@ -64,5 +64,10 @@ Clone the repository from GitHub to run the project locally:
 
 
 ---
+## 📬 Contact
+
+**Project Maintainer:** Humayun Kabir          
+📧 Email: humayunkabir6267@gmail.com  
+🐙 GitHub: [@Humayun1318](https://github.com/Humayun1318)
 
 Thank you for visiting the Pet Adoption Website! I hope you find the perfect pet to adopt.
